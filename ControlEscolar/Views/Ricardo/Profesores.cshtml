@@ -1,0 +1,144 @@
+﻿<h2>Profesores</h2>
+
+<style>
+    #myInput {
+        background-image: url('https://www.w3schools.com/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+</style>
+<form class="form-inline active-cyan-4">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por #. .">
+
+    <div class="modal-footer">
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProfesores">Agregar</button>
+    </div>
+
+</form>
+
+<!--MODAL PARA AGREGAR PROFESOR-->
+<div class="modal" id="modalProfesores" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Profesor</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="formGroupNombre">Nombre</label>
+                        <input type="text" class="form-control" id="P_Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupApellido">Apellido</label>
+                        <input type="text" class="form-control" id="P_Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="Area_Mat">Area</label>
+                        <select id="Area_Mat" class="form-control col-sm-11">
+                            <option value="" disabled>Selecciona un Area</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="Ag_Add_Profesor" type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---->
+
+<div class="modal" id="modalEditProf" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Profesor</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="formGroupNombre">Nombre</label>
+                        <input type="text" class="form-control" id="P_NombreEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupApellido">Apellido</label>
+                        <input type="text" class="form-control" id="P_ApellidoEdit">
+                    </div>
+                    <div class="form-group">
+                        <label for="Area_MatEdit">Area</label>
+                        <select id="Area_MatEdit" class="form-control col-sm-11">
+                            <option value="" disabled>Selecciona un Area</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button id="Edit_Profesor" type="button" class="btn btn-primary">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--MODAL PARA USAR COMO TOAST AL AGREGAR UN PROFESOR-->
+<div class="modal" id="modalAddProf" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+       
+            <div class="modal-body">
+                <p>Su operación ha sido exitosa!</p>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modaldelProf" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>¡Se ha eliminado con exito!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalActualizado" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>¡Actualizado correctamente!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!---->
+<table class="table" id="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Área</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody id="T_Prof_body_content">
+    </tbody>
+</table>
+
+@Scripts.Render("~/bundles/Profesores")

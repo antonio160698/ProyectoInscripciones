@@ -1,0 +1,25 @@
+﻿
+
+<div class="container">
+    <div class="row text-center"><h2>Inscripción</h2></div>
+
+    <div class="row">
+        <form action="/" method="post" class="form-inline">
+            <div class="form-group">
+                <label for="formLabelMatricula">Ingresa tu matricula: </label>
+                <input type="number" name="matricula" value="Matricula" id="matricula"/>
+                <button type="button" class="btn btn-primary btn-sm" id="btn-enviar" onclick="window.location = '@Url.Content("~/Inscripcion/ConsultarMaterias/")' + $('#matricula').val(), obtenerMatricula()">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="list-group" id="list">
+        @*<button type="button" class="list-group-item list-group-item-action">Nombre</button>*@
+
+    </div>
+
+
+
+</div>
+
+@Scripts.Render("~/bundles/Inscripcion")

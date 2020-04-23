@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Grupos";
+}
+
+<style>
+    .hide {
+        display: none;
+    }
+
+    .red {
+        color: red;
+    }
+
+    #myInput {
+        background-image: url('https://www.w3schools.com/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+</style>
+
+<h1>Grupos</h1>
+
+<div class=".col-12 .col-sm-12 .col-md-12 .col-lg-6 .col-xl-6 text-center">
+    <button class="btn btn-success" data-toggle="modal" data-target="#Ag_Grupo">Nuevo Grupo</button>
+</div>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por grupos">
+
+<br />
+
+<div class="modal fade" id="Ag_Grupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Agregar Grupo</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group col-sm-12">
+                        <label>Materia</label>
+                        <select id="S_Materia" class="form-control">
+                            <option value="" disabled>Elige una materia</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label>Profesor</label>
+                        <select id="S_Profesor" class="form-control">
+                            <option value="" disabled>Elige un maestro</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label>Turno</label>
+                        <select class="form-control" id="Turno">
+                            <option value="">Elige un turno</option>
+                            <option value="M">Matutino</option>
+                            <option value="V">Vespertino</option>
+                            <option value="N">Nocturno</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="save" onclick="GuardarDatosGrupo();">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table" id="datos">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Materia</th>
+            <th>Maestro</th>
+            <th>Turno</th>
+            <th colspan="2" align="center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="datos_Grupo"></tbody>
+</table>
+
+<nav aria-label="table">
+    <ul class="pagination" id="paginacion">
+        <li class="page-item"><a class="page-link" href="#table">Anterior</a></li>
+        <li class="page-item"><a class="page-link" href="#table">1</a></li>
+        <li class="page-item"><a class="page-link" href="#table">2</a></li>
+        <li class="page-item"><a class="page-link" href="#table">3</a></li>
+        <li class="page-item"><a class="page-link" href="#table">Siguiente</a></li>
+    </ul>
+</nav>
+
+<div class="modal" id="modalDeleteGrupo" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>¡Se ha eliminado con exito el grupo!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Creado por: S-176</p>
+
+
+@Scripts.Render("~/bundles/Grupos")
