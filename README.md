@@ -1,2 +1,2 @@
-# ControlEscolar.Semillero
-Proyecto didáctico de crear un sistema.
+# ControlEscolar
+Proyecto de Inscripciones a alumnos
